@@ -19,6 +19,9 @@ import com.testapplication.ConstructModule;
 import com.testapplication.DaggerTeacherComponent;
 import com.testapplication.TClass;
 import com.testapplication.Teacher;
+import com.testnamed.Cat;
+import com.testnamed.CatModule;
+import com.testnamed.DaggerCatComponent;
 
 import javax.inject.Inject;
 
@@ -53,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
         TClass tClass = new TClass();
         DaggerTeacherComponent.builder().constructModule(new ConstructModule(23, "jack")).build().inject(tClass);
         tClass.doWork();
+
+        Cat cat = new Cat();
+        DaggerCatComponent.builder().catModule(new CatModule()).build().inject(cat);
+        cat.likeFish();
     }
 
 }
