@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.test.DaggerStudentComponent;
 import com.test.SchoolModule;
 import com.test.Student;
+import com.test1.Home;
 
 import javax.inject.Inject;
 
@@ -41,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
         DaggerStudentComponent.builder().schoolModule(new SchoolModule()).build().inject(student);
         student.doWork();
+
+        Home home = new Home();
+        home.doSomething();
     }
 
 }
