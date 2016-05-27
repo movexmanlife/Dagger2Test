@@ -13,7 +13,7 @@ public class SchoolModule {
     }
 
     @Provides
-    public School provideSchool() {
+    School provideSchool() {
         return new School();
     }
 

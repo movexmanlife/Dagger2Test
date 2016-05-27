@@ -15,6 +15,10 @@ import com.test.DaggerStudentComponent;
 import com.test.SchoolModule;
 import com.test.Student;
 import com.test1.Home;
+import com.testapplication.ConstructModule;
+import com.testapplication.DaggerTeacherComponent;
+import com.testapplication.TClass;
+import com.testapplication.Teacher;
 
 import javax.inject.Inject;
 
@@ -45,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
         Home home = new Home();
         home.doSomething();
+
+        TClass tClass = new TClass();
+        DaggerTeacherComponent.builder().constructModule(new ConstructModule(23, "jack")).build().inject(tClass);
+        tClass.doWork();
     }
 
 }
